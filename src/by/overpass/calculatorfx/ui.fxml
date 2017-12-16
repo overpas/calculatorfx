@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.beans.property.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.Color?>
+
+<VBox spacing="10" alignment="CENTER" prefWidth="280" prefHeight="372" fx:controller="by.overpass.calculatorfx.Controller" xmlns:fx="http://javafx.com/fxml">
+    <fx:define>
+        <Font fx:id="FONT" size="18" />
+    </fx:define>
+    
+    <!--StackPane alignment="CENTER">
+        <Rectangle fill="TRANSPARENT" stroke="BLACK" width="230" height="50" />
+        <Text fx:id="output" font="$FONT" />
+    </StackPane-->
+    <HBox spacing="8" alignment="CENTER">
+    	<StackPane>
+        	<Rectangle fill="TRANSPARENT" stroke="BLACK" width="210" height="50" />
+        	<Text fx:id="output" font="$FONT" />
+    	</StackPane>
+    	<StackPane>
+    		<Rectangle fill="TRANSPARENT" stroke="BLACK" width="40" height="50" />
+    		<Text fx:id="currentOperation" />
+    	</StackPane>
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="btnOperator" text="C" prefWidth="57" font="$FONT" onAction="#processOperator" />
+        <Button fx:id="btnOperator" text="√" prefWidth="57" font="$FONT" onAction="#processOperator" />
+        <Button fx:id="btnOperator" text="^" prefWidth="57" font="$FONT" onAction="#processOperator" />
+        <Button fx:id="btnOperator" text="CL" prefWidth="57" font="$FONT" onAction="#processOperator" />
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="7" prefWidth="57" font="$FONT" onAction="#processNumpad" />
+        <Button text="8" prefWidth="57" font="$FONT" onAction="#processNumpad" />
+        <Button text="9" prefWidth="57" font="$FONT" onAction="#processNumpad" />
+        <Button fx:id="btnOperator" text="/" prefWidth="57" font="$FONT" onAction="#processOperator" />
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="4" prefWidth="57" font="$FONT" onAction="#processNumpad" />
+        <Button text="5" prefWidth="57" font="$FONT" onAction="#processNumpad" />
+        <Button text="6" prefWidth="57" font="$FONT" onAction="#processNumpad" />
+        <Button fx:id="btnOperator" text="*" prefWidth="57" font="$FONT" onAction="#processOperator" />
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="1" prefWidth="57" font="$FONT" onAction="#processNumpad" />
+        <Button text="2" prefWidth="57" font="$FONT" onAction="#processNumpad" />
+        <Button text="3" prefWidth="57" font="$FONT" onAction="#processNumpad" />
+        <Button fx:id="btnOperator" text="-" prefWidth="57" font="$FONT" onAction="#processOperator" />
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="0" prefWidth="124" font="$FONT" onAction="#processNumpad" />
+        <Button text="." prefWidth="57" font="$FONT" onAction="#processNumpad" />
+        <Button fx:id="btnOperator" text="+" prefWidth="57" font="$FONT" onAction="#processOperator" />
+    </HBox>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="btnEquals" text="=" prefWidth="258" font="$FONT" onAction="#processOperator" />
+    </HBox>
+    
+</VBox>
+

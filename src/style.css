@@ -1,0 +1,45 @@
+.root {
+	-fx-background-color: #ffffff;
+}
+
+.button {
+	-fx-background-color: #80ff80;
+}
+
+.button:hover {
+	-fx-background-color: #00c600;
+}
+
+.button:pressed {
+	-fx-background-color: #00c600;
+	-fx-translate-y: 3.0;
+}
+
+#btnEquals {
+	-fx-background-color: rgb(1,192,112);
+}
+
+#btnEquals:hover {
+	-fx-background-color: rgb(1,150,112);
+}
+
+#btnEquals:pressed {
+	-fx-background-color: rgb(1,150,112);
+	-fx-translate-y: 3.0;
+}
+
+#btnOperator {
+	-fx-background-color: rgb(32,193,32);
+}
+
+#btnOperator:hover {
+	-fx-background-color: rgb(32,150,32);
+}
+
+#btnOperator:pressed {
+	-fx-background-color: rgb(32,150,32);
+	-fx-translate-y: 3.0;
+}
+
+
+
