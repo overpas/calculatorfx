@@ -42,6 +42,8 @@ public class Controller {
 			processCLOperator();
 		} else if ("C".equals(value) && !output.getText().isEmpty()) {
 			processCOperator();
+		} else if ("±".equals(value)) {
+			processPlusMinusOperator();
 		} else {
 			processArithmeticOperator(value);
 		}
@@ -84,5 +86,14 @@ public class Controller {
 			number1 = Double.parseDouble(output.getText());
 		output.setText("");
 		firstTimeInARow = true;
+	}
+	
+	private void processPlusMinusOperator() {
+		if (!output.getText().trim().equals("")) {
+			if (output.getText().contains("-"))
+				output.setText(output.getText().replaceAll("-", ""));
+			else 
+				output.setText("-".concat(output.getText()));
+		}
 	}
 }

@@ -62,8 +62,9 @@
     </HBox>
     
     <HBox spacing="10" alignment="CENTER">
-        <Button text="0" prefWidth="124" font="$FONT" onAction="#processNumpad" />
+        <Button text="0" prefWidth="57" font="$FONT" onAction="#processNumpad" />
         <Button text="." prefWidth="57" font="$FONT" onAction="#processNumpad" />
+        <Button fx:id="btnOperator" text="±" prefWidth="57" font="$FONT" onAction="#processOperator" />
         <Button fx:id="btnOperator" text="+" prefWidth="57" font="$FONT" onAction="#processOperator" />
     </HBox>
     
