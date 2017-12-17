@@ -37,35 +37,52 @@ public class Controller {
 		currentOperation.setText("");
 		
 		if ("=".equals(value)) {
-			if (firstTimeInARow) {
-				number2 = Double.parseDouble(output.getText());
-				firstTimeInARow = false;
-			}
-			Double result = model.calculate(number1, number2, operator);
-			output.setText(String.valueOf(result));
-			number1 = result;
-			start = true;
+			processEqualsOperator();
 		} else if ("CL".equals(value)) {
-			output.setText("");
-			setOperator("");
-			number1 = 0d;
-			firstTimeInARow = true;
+			processCLOperator();
 		} else if ("C".equals(value) && !output.getText().isEmpty()) {
-			String out = output.getText();
-			out = out.substring(0, out.length() - 1);
-			output.setText(out);
-			firstTimeInARow = true;
+			processCOperator();
 		} else {
-			setOperator(value);
-			if (!output.getText().trim().equals("")) 
-				number1 = Double.parseDouble(output.getText());
-			output.setText("");
-			firstTimeInARow = true;
+			processArithmeticOperator(value);
 		}
 	}
 	
 	private void setOperator(String operator) {
 		this.operator = operator;
 		this.currentOperation.setText(operator);
+	}
+	
+	private void processEqualsOperator() {
+		if (firstTimeInARow) {
+			number2 = Double.parseDouble(output.getText());
+			firstTimeInARow = false;
+		}
+		
+		Double result = model.calculate(number1, number2, operator);
+		output.setText(String.valueOf(result));
+		number1 = result;
+		start = true;
+	}
+	
+	private void processCLOperator() {
+		output.setText("");
+		setOperator("");
+		number1 = 0d;
+		firstTimeInARow = true;
+	}
+	
+	private void processCOperator() {
+		String out = output.getText();
+		out = out.substring(0, out.length() - 1);
+		output.setText(out);
+		firstTimeInARow = true;
+	}
+	
+	private void processArithmeticOperator(String value) {
+		setOperator(value);
+		if (!output.getText().trim().equals("")) 
+			number1 = Double.parseDouble(output.getText());
+		output.setText("");
+		firstTimeInARow = true;
 	}
 }
